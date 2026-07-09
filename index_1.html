@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAKE Japanese Academy - Membership</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #fef6e4 0%, #f9f1e7 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 440px;
+    width: 100%;
+    padding: 40px 32px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  .logo {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  h1 {
+    font-size: 22px;
+    margin: 8px 0 4px;
+    color: #1a1a1a;
+  }
+  .subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .price {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 16px 0 4px;
+  }
+  .price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+  }
+  .features {
+    text-align: left;
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .features li {
+    padding: 8px 0;
+    color: #444;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .features li:before {
+    content: "✓";
+    color: #2ecc71;
+    font-weight: bold;
+  }
+  #paypal-button-container-P-6UN746928T0601544NJH5CDA {
+    margin-top: 24px;
+  }
+  .note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">🇯🇵</div>
+  <h1>TAKE Japanese Academy</h1>
+  <div class="subtitle">Discord Community Membership</div>
+
+  <div class="price">$10.00 <span>/ month</span></div>
+
+  <ul class="features">
+    <li>Exclusive Japanese lessons</li>
+    <li>Practice sessions & grammar checks</li>
+    <li>Supportive learning community</li>
+    <li>Cancel anytime</li>
+  </ul>
+
+  <div id="paypal-button-container-P-6UN746928T0601544NJH5CDA"></div>
+
+  <div class="note">Secure payment powered by PayPal</div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AQ2avwFxZjDdtFlQ7CehsZStH01gfIb7WUDUVwOUMi8RQrDhKl_vzeShvsVuj2Lo72MQ4kFI7rgFhmEY&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-6UN746928T0601544NJH5CDA'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert('Thank you for subscribing! Please check your email for your Discord invite, or join here: [招待リンクをここに追加]');
+      }
+  }).render('#paypal-button-container-P-6UN746928T0601544NJH5CDA');
+</script>
+
+</body>
+</html>
